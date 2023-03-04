@@ -1,14 +1,20 @@
 // use OpenWeather API to retrieve weather data
 // use Local Storage to store persistent data
 
+const degreeFahrenheit = "°F";
+let citySearchHistory = [];
+let previousCitySearch = "";
+
 let openWeatherMap = function (city) {
   let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=ce39e7239416ad754359ca762d28521a&units=imperial";
 
+  // fetch from openweathermap api
   fetch(apiUrl)
 
       .then(function (response) {
           if (response.ok) {
               response.json().then(function (data) {
+                // pass the feched data to display function
                   displayWeather(data);
               });
           } else {
@@ -21,7 +27,7 @@ let openWeatherMap = function (city) {
       })
 };
 
-let displayWeather = function (weatherData) {
+function displayWeather(weatherData) {
 
   todayWeatherCard(weatherData);
 
@@ -37,8 +43,31 @@ let displayWeather = function (weatherData) {
       });
 
 
+      // save the most recent city that was searched
+      previousCitySearch = weatherData.name;
+
+      // save the city to local storage 
+      saveLocalStorage(weatherData.name);
 
 };
+
+// submit event
+$("#city-search").submit(function (event) {
+  // stop page from refreshing
+  event.preventDefault();
+
+  let cityResult = $("#cityResult").val().trim();
+
+  console.log("seleced " + cityResult);
+
+  if (cityResult) {
+      openWeatherMap(cityResult);
+
+      $("#cityResult").val("");
+  } else {
+      alert("Please enter a city name");
+  }
+});
 
 function todayWeatherCard(weatherData) {
   $("#today-city").text(weatherData.name + " (" + dayjs(weatherData.dt * 1000).format("MM/DD/YYYY") + ") ").append(`<img src="https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png"></img>`);
@@ -70,3 +99,50 @@ function fiveDayDeck(weatherData) {
       cardDeck.append(forecastCard);
   }
 }
+
+
+// save city weather data to local storage
+let saveLocalStorage = function (cityData) {
+  if (!citySearchHistory.includes(cityData)) {
+      citySearchHistory.push(cityData);
+      $("#search-history").append("<a href='#' class='list-group-item list-group-item-action' id='" + cityData + "'>" + cityData + "</a>")
+
+      $("dropdown-menu").append("<a href='#' class='dropdown-item' id='" + cityData + "'>" + cityData + "</a>")
+
+  }
+
+  localStorage.setItem("weatherSearchHistory", JSON.stringify(citySearchHistory));
+
+  localStorage.setItem("lastCitySearched", JSON.stringify(previousCitySearch));
+};
+
+let loadLocalStorage = function () {
+  citySearchHistory = JSON.parse(localStorage.getItem("weatherSearchHistory"));
+  previousCitySearch = JSON.parse(localStorage.getItem("lastCitySearched"));
+
+  if (!citySearchHistory) {
+      citySearchHistory = []
+  }
+
+  if (!previousCitySearch) {
+      previousCitySearch = ""
+  }
+
+  $("#search-history").empty();
+
+  for (i = 0; i < citySearchHistory.length; i++) {
+
+      $("#search-history").append("<a href='#' class='list-group-item list-group-item-action' id='" + citySearchHistory[i] + "'>" + citySearchHistory[i] + "</a>");
+  }
+};
+
+loadLocalStorage();
+
+if (previousCitySearch != "") {
+  openWeatherMap(previousCitySearch);
+}
+
+$("#search-history").on("click", function (event) {
+  let prevCity = $(event.target).closest("a").attr("id");
+  openWeatherMap(prevCity);
+});
