@@ -13,53 +13,61 @@
 </head>
 
 <body>
-    <header class="">
-        <div>
+    <header>
+        <div class="jumbotron jumbotron-fluid text-center">
             <h1>Weather Dashboard</h1>
         </div>
     </header>
 
-    <main class="">
-        <!-- search form (use bootstrap form) -->
-        <div class="">
-            <h5>Search for a City:</h5>
-            <form class="form-inline form" id="city-search">
-                <input type="search" class="form-control sm-2 ds-input" id="cityResult"
-                    placeholder="Enter city name...">
-                <button type="submit" class="btn btn-primary sm-2"><span class="oi oi-magnifying-glass"></span></button>
-            </form>
-        </div>
+    <div class="container-fluid">
+        <div class="row">
 
-        <!-- search history (use bootstrap dropdown) -->
-        <ul class="list-group" id="search-history"></ul>
+            <div class="col-sm- col-md-3 search-content">
 
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown button
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-        </div>
+                <!-- search form (use bootstrap form) -->
+                <h5>Search for a City:</h5>
+                <form class="form-inline form" id="city-search">
+                    <input type="search" class="form-control sm-2 ds-input" id="cityResult"
+                        placeholder="Enter city name...">
+                    <button type="submit" class="btn btn-primary sm-2"><span
+                            class="oi oi-magnifying-glass"></span></button>
+                </form>
 
-        <div class="col-sm-8">
-            <!-- today's forecast (use bootstrap card) -->
-            <div class="card today">
-                <div class="card-body">
-                    <h6 id="today-city" class="card-title"></h6>
-                    <p id="today-temp" class="card-text"></p>
-                    <p id="today-wind" class="card-text"></p>
-                    <p id="today-humid" class="card-text"></p>
+
+                <!-- search history (use bootstrap dropdown) -->
+                <ul class="list-group" id="search-history"></ul>
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown button
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
                 </div>
+
             </div>
-            <!-- 5-day forecast (use bootstrap card) -->
-            <h6>5-Day Forcast:</h6>
-            <div class="card-deck"></div>
+
+            <div class="col-sm-8">
+                <!-- today's forecast (use bootstrap card) -->
+                <div class="card today">
+                    <div class="card-body">
+                        <h6 id="today-city" class="card-title"></h6>
+                        <p id="today-temp" class="card-text"></p>
+                        <p id="today-wind" class="card-text"></p>
+                        <p id="today-humid" class="card-text"></p>
+                    </div>
+                </div>
+                <!-- 5-day forecast (use bootstrap card) -->
+                <h6>5-Day Forcast:</h6>
+                <div class="card-deck"></div>
+            </div>
         </div>
-    </main>
+    </div>
+
 
 
     <!-- javaScript links -->
