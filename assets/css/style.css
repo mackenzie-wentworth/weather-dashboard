@@ -1,14 +1,58 @@
-/* create styling variables */
-/* include bootstrap */
-
 :root {
-
+  --IVORY: #F4E8C1;
+  --AZURE: #A0C1B8;
+  --BOLIVIA: #709FB0;
+  --JACARANDA: #726A95;
+  --MALBEC: #351F39;
 }
 
 body {
+  background-color: var(--IVORY);
+  font-family: Tahoma, sans-serif;
+  
+}
+
+.jumbotron {
+  background-color: var(--MALBEC);
+  color: white;
+}
+
+h5 {
+  font-size: 15px;
+  color: black;
+  font-weight: bold;
+} 
+
+h2 {
+  color: black;
+  font-weight: bold;
+}
+
+h6 {
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.today {    
+  background-color: var(--AZURE);
+  color: white;
+}
+
+.fiveDay {
+  background-color: var(--BOLIVIA);
+  color: white;
 
 }
 
-.btn {
 
+
+.btn {
+  background-color: var(--BOLIVIA);
+}
+
+.list-group-item {
+  background-color: var(--JACARANDA);
+  color: white;
+  margin: 5px;
 }
