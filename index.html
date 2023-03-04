@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- css links -->
+    <!-- css links -->
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css"/>
-    <link rel="stylesheet" href="./assets/css/style.css"/>
+        href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Weather Dashboard</title>
 </head>
 
@@ -19,46 +20,52 @@
     </header>
 
     <main class="">
-    <!-- search form (use bootstrap form) -->
-    <div class="">
-        <h5>Search for a City:</h5>
+        <!-- search form (use bootstrap form) -->
+        <div class="">
+            <h5>Search for a City:</h5>
             <form class="form-inline form" id="city-search">
                 <input type="search" class="form-control sm-2 ds-input" id="cityResult"
                     placeholder="Enter city name...">
-                <button type="submit" class="btn btn-primary sm-2"><span
-                    class="oi oi-magnifying-glass"></span></button>
+                <button type="submit" class="btn btn-primary sm-2"><span class="oi oi-magnifying-glass"></span></button>
             </form>
-    </div>
-
-    <!-- search history (use bootstrap dropdown) -->
-    <ul class="list-group" id="search-history"></ul>
-
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown button
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
         </div>
-    </div>
-    
 
-    <!-- today's forecast (use bootstrap card) -->
-    <!-- 5-day forecast (use bootstrap card) -->
-    <div class="">
-        <h2>Today's Forecast</h2>
-        <br>
-        <h2>5-Day Forecast</h2>
-    </div>
+        <!-- search history (use bootstrap dropdown) -->
+        <ul class="list-group" id="search-history"></ul>
 
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
+
+        <div class="col-sm-8">
+            <!-- today's forecast (use bootstrap card) -->
+            <div class="card today">
+                <div class="card-body">
+                    <h6 id="today-city" class="card-title"></h6>
+                    <p id="today-temp" class="card-text"></p>
+                    <p id="today-wind" class="card-text"></p>
+                    <p id="today-humid" class="card-text"></p>
+                </div>
+            </div>
+            <!-- 5-day forecast (use bootstrap card) -->
+            <h6>5-Day Forcast:</h6>
+            <div class="card-deck"></div>
+        </div>
     </main>
 
 
     <!-- javaScript links -->
 
     <!-- My Javascript -->
-    <script src="./assets/js/script.js"></script> 
+    <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
