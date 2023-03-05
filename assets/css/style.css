@@ -37,11 +37,20 @@ h6 {
 .today {    
   background-color: var(--AZURE);
   color: white;
+  border-radius: 25px;
+  border-color: white;
+  border-style: solid;
+  border-width: thick;
+
 }
 
 .fiveDay {
   background-color: var(--BOLIVIA);
   color: white;
+  border-radius: 25px;
+  border-color: white;
+  border-style: solid;
+  border-width: thick;
 
 }
 
