@@ -1,4 +1,5 @@
-
+// Clear Local Storage
+// localStorage.clear();
 
 const degreeFahrenheit = "°F";
 let citySearchHistory = [];
