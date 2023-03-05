@@ -5,7 +5,7 @@ const degreeFahrenheit = "°F";
 let citySearchHistory = [];
 let previousCitySearch = "";
 
-let openWeatherMap = function (city) {
+function openWeatherMap(city) {
     let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=ce39e7239416ad754359ca762d28521a&units=imperial";
 
     fetch(apiUrl)
@@ -13,7 +13,7 @@ let openWeatherMap = function (city) {
         .then(function (response) {
             if (response.ok) {
                 response.json().then(function (data) {
-                    displayWeather(data);
+                    handleWeatherData(data);
                 });
             } else {
                 alert("Error: " + response.statusText);
@@ -25,7 +25,8 @@ let openWeatherMap = function (city) {
         })
 };
 
-let displayWeather = function (weatherData) {
+
+function handleWeatherData(weatherData) {
 
     todayWeatherCard(weatherData);
 
@@ -48,7 +49,7 @@ let displayWeather = function (weatherData) {
 
 };
 
-let saveLocalStorage = function (cityData) {
+function saveLocalStorage(cityData) {
     if (!citySearchHistory.includes(cityData)) {
         citySearchHistory.push(cityData);
         $("#search-history").append("<a href='#' class='list-group-item list-group-item-action' id='" + cityData + "'>" + cityData + "</a>")
@@ -64,7 +65,7 @@ let saveLocalStorage = function (cityData) {
     loadLocalStorage();
 };
 
-let loadLocalStorage = function () {
+function loadLocalStorage() {
     citySearchHistory = JSON.parse(localStorage.getItem("weatherSearchHistory"));
     previousCitySearch = JSON.parse(localStorage.getItem("lastCitySearched"));
 
