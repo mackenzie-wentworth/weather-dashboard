@@ -1,5 +1,5 @@
 // Clear Local storage
-// localStorage.clear();
+localStorage.clear();
 
 const degreeFahrenheit = "°F";
 let citySearchHistory = [];
@@ -52,9 +52,9 @@ function handleWeatherData(weatherData) {
 function saveLocalStorage(cityData) {
     if (!citySearchHistory.includes(cityData)) {
         citySearchHistory.push(cityData);
-        $("#search-history").append("<a href='#' class='list-group-item list-group-item-action' id='" + cityData + "'>" + cityData + "</a>")
+        // $("#search-history").append("<a href='#' class='list-group-item list-group-item-action' id='" + cityData + "'>" + cityData + "</a>")
 
-        $("dropdown-menu").append("<a href='#' class='dropdown-item' id='" + cityData + "'>" + cityData + "</a>")
+        $(".dropdown-menu").append("<a href='#' class='dropdown-item' id='" + cityData + "'>" + cityData + "</a>");
 
     }
 
@@ -81,7 +81,8 @@ function loadLocalStorage() {
 
     for (i = 0; i < citySearchHistory.length; i++) {
 
-        $("#search-history").append("<a href='#' class='list-group-item list-group-item-action' id='" + citySearchHistory[i] + "'>" + citySearchHistory[i] + "</a>");
+        // $("#search-history").append("<a href='#' class='list-group-item list-group-item-action' id='" + citySearchHistory[i] + "'>" + citySearchHistory[i] + "</a>");
+        $(".dropdown-menu").append("<a href='#' class='dropdown-item' id='" + citySearchHistory[i] + "'>" + citySearchHistory[i] + "</a>");
     }
 };
 
