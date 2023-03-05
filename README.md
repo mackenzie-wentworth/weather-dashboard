@@ -21,7 +21,7 @@ This week I was challenged to create a "Weather Dashboard" web application that 
 
 The following image shows the appearance and functionality of the "Weather Dashboard" web application:
 
-![An image of the web application for the Weather Dashboard.](./assets/images/deployed-page.png)
+![An image of the web application for the Weather Dashboard.](./assets/images/deployed-page-weather-dashboard.png)
 
 ## Credits
 
