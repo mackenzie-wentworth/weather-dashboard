@@ -70,3 +70,8 @@ h6 {
   color: white;
   margin: 5px;
 }
+
+.dropdown {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}

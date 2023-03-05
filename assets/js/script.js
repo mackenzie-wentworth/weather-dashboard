@@ -94,10 +94,10 @@ if (previousCitySearch != "") {
     openWeatherMap(previousCitySearch);
 }
 
-$("#search-history").on("click", function (event) {
-    let prevCity = $(event.target).closest("a").attr("id");
-    openWeatherMap(prevCity);
-});
+// $("#search-history").on("click", function (event) {
+//     let prevCity = $(event.target).closest("a").attr("id");
+//     openWeatherMap(prevCity);
+// });
 
 $(".dropdown-menu").on("click", function (event) {
   let prevCity = $(event.target).closest("a").attr("id");
@@ -111,7 +111,7 @@ $("#city-search").submit(function (event) {
 
     let cityResult = $("#cityResult").val().trim();
 
-    console.log("seleced " + cityResult);
+    // console.log("seleced " + cityResult);
 
     if (cityResult) {
         openWeatherMap(cityResult);
@@ -133,8 +133,6 @@ function todayWeatherCard(weatherData) {
 function fiveDayDeck(weatherData) {
     var cardDeck = $(".card-deck");
     cardDeck.empty();
-
-    console.log(weatherData);
 
     for (i = 7; i <= weatherData.list.length; i += 8) {
 
