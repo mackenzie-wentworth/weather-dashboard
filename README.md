@@ -2,12 +2,12 @@
 
 
 ## Link to Deployed Webpage 
-To view the "Weather Dashboard" web application, please visit the following link: 
+To view the "Weather Dashboard" web application, please visit the following link: https://mackenzie-wentworth.github.io/weather-dashboard/
 
 
 ## The Task
 
-This week I was challenged to create a "Weather Dashboard" web application that retrieves data from another server-side API. To complete this task, I had to build a code from scratch using an API key with the OpenWeather API and localStorage with JavaScript to produce a dynamically updated product of HTML and CSS. Per the requirements to develop the "Weather Dashboard", I made sure to include the following items:
+This week I was challenged to create a "Weather Dashboard" web application that retrieves data from another server-side API. To complete this task, I had to build a code from scratch using an API key with the OpenWeather API and localStorage with JavaScript to produce a dynamically updated product of HTML and CSS. Per the requirements to develop the "Weather Dashboard," I made sure to include the following items:
 
 * A 'search' form input that allows users to search for a particular city
 * Once a user searches for a city, that city is saved to localStorage and added to a 'search history' list
