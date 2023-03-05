@@ -5,11 +5,14 @@ const degreeFahrenheit = "°F";
 let citySearchHistory = [];
 let previousCitySearch = "";
 
+const openWeather = "https://api.openweathermap.org/data/2.5/weather?q=";
+const apiKey = "087f4580b9c0a749dba3a439d836e75a";
+const appId = "&appid=" + apiKey + "&units=imperial";
+
 function openWeatherMap(city) {
-    let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=ce39e7239416ad754359ca762d28521a&units=imperial";
+    let apiUrl = openWeather + city + appId;
 
-    fetch(apiUrl)
-
+fetch(apiUrl)
         .then(function (response) {
             if (response.ok) {
                 response.json().then(function (data) {
@@ -30,7 +33,7 @@ function handleWeatherData(weatherData) {
 
     todayWeatherCard(weatherData);
 
-    fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + weatherData.name + "&appid=ce39e7239416ad754359ca762d28521a&units=imperial")
+    fetch(openWeather+ weatherData.name + appId)
         .then(function (response) {
             response.json().then(function (fiveDayData) {
 
