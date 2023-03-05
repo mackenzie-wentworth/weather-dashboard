@@ -1,11 +1,11 @@
-// Clear Local storage
-// localStorage.clear();
+
 
 const degreeFahrenheit = "°F";
 let citySearchHistory = [];
 let previousCitySearch = "";
 
 const openWeather = "https://api.openweathermap.org/data/2.5/weather?q=";
+const openForcast = "https://api.openweathermap.org/data/2.5/forecast?q=";
 const apiKey = "087f4580b9c0a749dba3a439d836e75a";
 const appId = "&appid=" + apiKey + "&units=imperial";
 
@@ -33,7 +33,7 @@ function handleWeatherData(weatherData) {
 
     todayWeatherCard(weatherData);
 
-    fetch(openWeather+ weatherData.name + appId)
+    fetch(openForcast + weatherData.name + appId)
         .then(function (response) {
             response.json().then(function (fiveDayData) {
 
