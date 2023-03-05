@@ -1,5 +1,5 @@
 // Clear Local storage
-localStorage.clear();
+// localStorage.clear();
 
 const degreeFahrenheit = "°F";
 let citySearchHistory = [];
@@ -77,7 +77,9 @@ function loadLocalStorage() {
         previousCitySearch = ""
     }
 
-    $("#search-history").empty();
+    // $("#search-history").empty();
+    $(".dropdown-menu").empty();
+
 
     for (i = 0; i < citySearchHistory.length; i++) {
 
@@ -97,6 +99,10 @@ $("#search-history").on("click", function (event) {
     openWeatherMap(prevCity);
 });
 
+$(".dropdown-menu").on("click", function (event) {
+  let prevCity = $(event.target).closest("a").attr("id");
+  openWeatherMap(prevCity);
+});
 
 // submit event
 $("#city-search").submit(function (event) {

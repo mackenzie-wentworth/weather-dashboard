@@ -63,3 +63,13 @@ h6 {
   color: white;
   margin: 5px;
 }
+
+.jumbotron {
+  font-size: 14px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.jumbotron h1 {
+  font-size: 30px;
+}
